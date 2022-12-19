@@ -1,36 +1,23 @@
-#include "main.h"
-#include <stdio.h>
-
 /**
- * main - prints the numbers from 1 to 100, followed by a new line
- * but for multiples of three prints Fizz instead of the number
- * and for the multiples of five prints Buzz
- * Return: Always 0 (Success)
- */
-int main(void)
+ * _strcpy - copies a string from one pointer to another
+ *	including the terminating null byte (\0)
+ *
+ * @src: source of string parameter input
+ * @dest: destination of string
+ *
+ * Return: pointer to dest input parameter
+*/
+
+char *_strcpy(char *dest, char *src)
 {
-	int i;
+	int a, b = 0;
 
-	for (i = 1; i <= 100; i++)
+	for (a = 0; src[a] != '\0'; ++a)
 	{
-		if (i % 3 == 0 && i % 5 != 0)
-		{
-			printf(" Fizz");
-		} else if (i % 5 == 0 && i % 3 != 0)
-		{
-			printf(" Buzz");
-		} else if (i % 3 == 0 && i % 5 == 0)
-		{
-			printf(" FizzBuzz");
-		} else if (i == 1)
-		{
-			printf("%d", i);
-		} else
-		{
-			printf(" %d", i);
-		}
+		dest[b] = src[a];
+		++b;
 	}
-	printf("\n");
+	dest[b] = '\0';
 
-	return (0);
+	return (dest);
 }
